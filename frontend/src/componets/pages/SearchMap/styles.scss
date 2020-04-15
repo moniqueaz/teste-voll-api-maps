@@ -1,0 +1,36 @@
+.searchMap {
+  overflow: hidden;
+  height: 100vh;
+  padding: 10px 0;
+  background-color: #eee;
+  &__search {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+  &__list-cards {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+    overflow: auto;
+
+    &.hide {
+      display: none;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 1 1 calc(30% - 20px);
+      margin-bottom: 0;
+      height: calc(100vh - 300px);
+      margin-right: 20px;
+    }
+  }
+  &__map {
+    flex: 1 1 100%;
+    width: 100vw;
+    height: calc(100vh - 300px);
+    position: relative;
+
+    @media (min-width: 1280px) {
+      flex: 1 1 70%;
+    }
+  }
+}

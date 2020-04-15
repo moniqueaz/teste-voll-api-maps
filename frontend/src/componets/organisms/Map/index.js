@@ -46,8 +46,10 @@ const MapContainer = ({ google }) => {
       >
         <Marker position={new maps.LatLng({ ...location })} />
 
-        {locations.map((local) => {
-          return <Marker position={new maps.LatLng({ ...local })} />;
+        {locations.map((local, index) => {
+          return (
+            <Marker key={index} position={new maps.LatLng({ ...local })} />
+          );
         })}
       </Map>
     </>

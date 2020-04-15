@@ -61,8 +61,8 @@ module.exports = {
         const resultJson = result.data.results.map((item) => {
           return {
             id: item.place_id,
-            lat: item.geometry.location.lat,
-            lng: item.geometry.location.lng,
+            lat: parseFloat(item.geometry.location.lat),
+            lng: parseFloat(item.geometry.location.lng),
           };
         });
         return response.status(200).json(resultJson);
@@ -85,8 +85,8 @@ module.exports = {
           address: result.data.result.formatted_address,
           rating: result.data.result.rating,
           distance: {
-            lat_inicial: parseFloat(lat),
-            long_inicial: parseFloat(lng),
+            lat_inicial: lat,
+            long_inicial: lng,
             lat_final: result.data.result.geometry.location.lat,
             long_final: result.data.result.geometry.location.lng,
           },
